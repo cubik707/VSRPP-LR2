@@ -38,7 +38,12 @@ namespace LR2
 
         private void Redo_Click(object sender, EventArgs e)
         {
-
+            if (removedShapes.Count > 0)
+            {
+                Shape shape = removedShapes.Pop();
+                shapes.Add(shape);
+                pictureBox1.Invalidate();
+            }
         }
     }
 }
