@@ -42,3 +42,29 @@ namespace LR2
         }
     }
 }
+
+public class Shape
+{
+    private int x;
+    private int y;
+    private Color color;
+
+    public Shape(int x, int y, Color color)
+    {
+        this.x = x;
+        this.y = y;
+        this.color = color;
+    }
+
+    public void Draw(Graphics g)
+    {
+        using (Brush brush = new SolidBrush(color))
+        {
+            // Рисуем число 17 с центром в (x, y)
+            string text = "17";
+            Font font = new Font("Arial", 30, FontStyle.Bold);
+            SizeF textSize = g.MeasureString(text, font);
+            g.DrawString(text, font, brush, x - textSize.Width / 2, y - textSize.Height / 2);
+        }
+    }
+}
