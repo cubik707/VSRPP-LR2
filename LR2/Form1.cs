@@ -13,11 +13,11 @@ namespace LR2
     public partial class Form1 : Form
     {
         //для выбора цвета
-        private Color currentColor = Color.Black;
+        private Color selectedColor = Color.Black;
         //хранение объектов
         private List<Shape> shapes = new List<Shape>();
         //хранение удаленных объектов
-        private Stack<List<Shape>> removedShapes = new Stack<List<Shape>>();
+        private Stack<Shape> removedShapes = new Stack<Shape>();
 
 
         public Form1()
@@ -54,7 +54,10 @@ namespace LR2
 
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
         {
-
+            // Добавляем новую фигуру в список и перерисовываем
+            Shape shape = new Shape(e.X, e.Y, selectedColor);
+            shapes.Add(shape);
+            pictureBox1.Invalidate();
         }
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
