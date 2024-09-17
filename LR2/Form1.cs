@@ -56,6 +56,15 @@ namespace LR2
         {
 
         }
+
+        private void pictureBox1_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            foreach (var shape in shapes)
+            {
+                shape.Draw(g);
+            }
+        }
     }
 }
 
