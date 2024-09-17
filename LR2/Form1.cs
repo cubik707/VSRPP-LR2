@@ -33,7 +33,13 @@ namespace LR2
 
         private void delete_Click(object sender, EventArgs e)
         {
-
+            if (shapes.Count > 0)
+            {
+                Shape shape = shapes[shapes.Count - 1];
+                shapes.Remove(shape);
+                removedShapes.Push(shape);
+                pictureBox1.Invalidate();
+            }
         }
 
         private void Redo_Click(object sender, EventArgs e)
