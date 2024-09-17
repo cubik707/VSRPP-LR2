@@ -68,6 +68,56 @@ namespace LR2
                 shape.Draw(g);
             }
         }
+
+        private void Green_Click(object sender, EventArgs e)
+        {
+            selectedColor = Color.Green;
+        }
+
+        private void Red_Click(object sender, EventArgs e)
+        {
+            selectedColor = Color.Red;
+        }
+
+        private void Yellow_Click(object sender, EventArgs e)
+        {
+            selectedColor = Color.Yellow;
+        }
+
+        private void Blue_Click(object sender, EventArgs e)
+        {
+            selectedColor = Color.Blue;
+        }
+
+        private void Purple_Click(object sender, EventArgs e)
+        {
+            selectedColor = Color.Purple;
+        }
+
+        private void Orange_Click(object sender, EventArgs e)
+        {
+            selectedColor = Color.Orange;
+        }
+
+        private void Brown_Click(object sender, EventArgs e)
+        {
+            selectedColor = Color.Brown;
+        }
+
+        private void Gray_Click(object sender, EventArgs e)
+        {
+            selectedColor = Color.Gray;
+        }
+
+        private void Cyan_Click(object sender, EventArgs e)
+        {
+            selectedColor = Color.Cyan;
+        }
+
+        private void Magenta_Click(object sender, EventArgs e)
+        {
+            selectedColor = Color.Magenta;
+        }
     }
 }
 
@@ -94,5 +144,10 @@ public class Shape
             SizeF textSize = g.MeasureString(text, font);
             g.DrawString(text, font, brush, x - textSize.Width / 2, y - textSize.Height / 2);
         }
+    }
+
+    public void ChangeColor(Color newColor)
+    {
+        color = newColor;
     }
 }
