@@ -15,9 +15,9 @@ namespace LR2
         //для выбора цвета
         private Color currentColor = Color.Black;
         //хранение объектов
-        private List<Rectangle> drawnObjects = new List<Rectangle>();
+        private List<Shape> shapes = new List<Shape>();
         //хранение удаленных объектов
-        private Stack<List<Rectangle>> undoStack = new Stack<List<Rectangle>>();
+        private Stack<List<Shape>> removedShapes = new Stack<List<Shape>>();
 
 
         public Form1()
@@ -50,6 +50,11 @@ namespace LR2
                 shapes.Add(shape);
                 pictureBox1.Invalidate();
             }
+        }
+
+        private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }
